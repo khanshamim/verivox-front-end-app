@@ -1,0 +1,33 @@
+# Mac OSX Finder files.
+**/.DS_Store
+.DS_Store
+
+# Misc
+coverage/
+node_modules/
+tmp/
+npm-debug.log*
+yarn-error.log*
+.ng_pkg_build/
+
+# VSCode
+# https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+**/*.code-workspace
+
+# Also ignore code styles because .editorconfig is used instead.
+.idea/codeStyles/
+
+# Outputs
+bazel-*
+test-project-host-*
+dist/
+dist-schema/
+
+# Typings file.
+typings/
+

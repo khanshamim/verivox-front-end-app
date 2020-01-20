@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-2 mt-2"><strong>Sort Tariff:</strong> </div>
+    <div class="col-10 mt-2">
+        <select class="custom-select" (change)="fitlerTariff($event)">
+            <option disabled>--Select to Sort--</option>
+            <option *ngFor="let filter of filterArray">{{filter}}</option>
+          </select>
+    </div>
+</div>
+
+<div *ngFor="let offer of offers" class="row mt-3  border bg-ligh">
+    <div class="col-1 tariff-rank">
+        <span>{{offer.rank}}.</span>
+    </div>
+    <div class="col-3 col-sm-3 col-md-3 col-lg-3 mt-3 tariff-name">
+        <span *ngIf="offer.product.content.text">
+             {{ offer.product.content.text }} 
+        </span>
+        <span *ngIf="!offer.product.content.text">
+            <!-- TODO: alternate text if tariff name is missing in Data response  -->
+            Tariff Name
+       </span>
+
+    </div>
+    <div class="col-3 col-sm-4 col-md-4 col-lg-2 mt-3 tariff-data-feature">
+        <div class="tariff-data-feature-download">
+            <p>Download</p>
+            <i class="fa fa-arrow-down"
+                aria-hidden="true"></i>&nbsp;
+                <span>{{offer.contractTerm.downloadSpeed.amount | dataSize :  offer.contractTerm.downloadSpeed.unit}}</span>
+            <!-- TODO:  remove hard code from here for data extension -->
+            &nbsp;<span>Mbit/s</span>
+        </div>
+        <div class="tariff-data-feature-upload mt-1">
+            <p>Upload</p>
+            <i class="fa fa-arrow-up"
+                aria-hidden="true"></i><span>{{offer.contractTerm.uploadSpeed.amount | dataSize :  offer.contractTerm.uploadSpeed.unit}}</span>
+            <!-- TODO:  remove hard code from here for data extension -->
+            &nbsp;<span>Mbit/s</span>
+        </div>
+    </div>
+
+
+    <div class="col-2 col-md-2 col-lg-2 mt-3 tariff-details">
+        <ul>
+            <!-- TODO: Add  Tariff Benefits by Confirming Actual fields from Data Json -->
+            <li> Tariff Benefits 1</li>
+            <li> Tariff Benefits 1</li>
+            <li> Tariff Benefits 1</li>
+        </ul>
+    </div>
+
+
+    <div class="col-5 col-sm-4 col-md-4 col-lg-4 mt-3 mb-3 tariff-price">
+        <div class="tariff-cost">{{offer.cost.effectiveCost.content.text}}</div>
+        <button class="btn btn-primary tariff-button-m">To Tariff > </button>
+        <button class="tariff-action-button-sm"> > </button>
+    </div>
+</div>

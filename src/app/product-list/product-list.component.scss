@@ -1,0 +1,168 @@
+.tariff-rank{
+    border: 1px solid #dee2e6; 
+} 
+
+.tariff-button-m{
+     display: inline;
+}
+
+.tariff-button-sm{
+    display: none;
+}
+
+.tariff-price{
+    text-align: right;
+}
+
+.tariff-cost{
+    font-weight: bold;
+    margin-right: 10px;
+    display: block;
+}
+
+.tariff-action-button-sm{
+    display: none;
+}
+
+ 
+  /* Button */
+  .button, button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+  }
+  
+  .button:hover, button:hover {
+    opacity: 0.8;
+    font-weight: normal;
+  }
+  
+  .button:disabled, button:disabled {
+    opacity: 0.5;
+    cursor: auto;
+  }
+
+
+  
+ 
+
+  @media screen and (max-width: 480px) {
+
+    .tariff-rank {
+        border: 0px;
+    }
+
+    .tariff-cost{
+        display: inline-block;
+        vertical-align: top;
+    }
+   
+   .tariff-data-feature-download > p{
+        display: none;
+    }
+
+    .tariff-data-feature-upload {
+        display: none;
+    }
+
+    .tariff-details {
+      display: none;
+    }
+
+    .tariff-button-m{
+        display: none;
+    }
+   
+    .tariff-action-button-sm{
+        display:inline-block;
+        height: 59px;
+        width: 23px;
+        padding: 0px;
+    }
+
+  }  
+
+  @media screen and (min-width: 480px) and (max-width: 780px) {
+    .tariff-rank {
+         border: 0px;
+    }
+    
+    .tariff-data-feature-download > p{
+        display: none;
+    }
+
+    .tariff-data-feature-upload > p{
+        display: none;
+    }
+    
+    .tariff-details {
+       display: none;
+    }
+
+   }
+   
+  /* The container must be positioned relative: */
+  .custom-select {
+    position: relative;
+    width: 100%;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
